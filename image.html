@@ -1,0 +1,139 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Images</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+#img1{
+margin-left:auto;
+margin-right:auto;
+display:block;
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a class="active" href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+ <h1>CSS Images</h1> 
+ <h3 style="color: red">Thumbnail Image:</h3>
+ <p>Styling Image as a Thumbnail:</p>
+ <pre class="box">
+  <code>
+      img{
+border: 2px solid red;
+border-radius:5px;
+padding:10px;
+}
+  </code>
+</pre>
+<img src="Capture.png" style="border: 2px solid red; border-radius: 5px; padding: 10px; height: 30%;"></img>
+
+<h3 style="color: red">Transparent Image:</h3>
+<pre class="box">
+  <code>
+      img{  
+border: 2px solid red;  
+border-radius:5px;  
+padding:10px;  
+opacity:0.3;  
+}  
+  </code>
+</pre>
+<img src="Capture.png" style="border:2px solid red; border-radius: 5px;padding: 10px;opacity: 0.3;height: 30%;">
+<h3 style="color: red">Center an Image:</h3>
+<pre class="box">
+  <code>
+#img1{
+margin-left:auto;
+margin-right:auto;
+display:block;
+}
+  </code>
+</pre>
+<p style="color: blue">Output:</p>
+<img src="Capture.png" id="img1" style="height: 30%;"></img>
+
+</div>
+</div>
+</body>
+</html>

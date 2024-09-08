@@ -1,0 +1,174 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Introduction</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a class="active" href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+ <h1>CSS Backgrounds</h1> 
+ <p>There are 5 CSS background properties that affects the HTML elements:</p>
+ <ul>
+   <li>background-color</li>
+   <li>background-image</li>
+   <li>background-repeat</li>
+   <li>background-attachment</li>
+   <li>background-position</li>
+ </ul>
+ <h2>CSS Background Color</h2>
+  <p>The <em>background-color</em> property specifies the background color of an element.</p>
+ <pre class="box">
+  <code>
+  h1 {
+    background-color: green;
+  }
+
+  div {
+    background-color: lightblue;
+  }
+
+  p {
+    background-color: yellow;
+  }  
+  </code>
+</pre>
+<h2>CSS Background Image</h2>
+<p>The <em>background-image</em> property is used to set an image as a background of an element. By default the image covers the entire element.</p> 
+<pre class="box">
+  <code>
+ body {  
+  background-image: url("paper1.gif");  
+  }
+  </code>
+</pre>
+<h2>CSS Background Repeat</h2>
+<p>By default, the background-image property repeats the background image horizontally and vertically. Some images are repeated only horizontally or vertically. </p>
+<pre class="box">
+  <code>
+   body {  
+    background-image: url("gradient_bg.png");  
+    background-repeat: repeat-x;  
+  }   
+  </code>
+</pre>
+<pre class="box">
+  <code>
+  body {  
+    background-image: url("gradient_bg.png");  
+    background-repeat: repeat-y;  
+  }    
+  </code>
+</pre>
+<h2>CSS Background Attachment</h2>
+<p>The <em>background-attachment</em> property is used to specify if the background image is fixed or scroll with the rest of the page in browser window.</p> 
+<pre class="box">
+  <code>
+  background: white url('bbb.gif');  
+  background-repeat: no-repeat;  
+  background-attachment: fixed; 
+  </code>
+</pre>
+<h2>CSS Background Position</h2>
+<p>You can set the following positions:</p> 
+<ol>
+  <li>center</li>
+  <li>top</li>
+  <li>bottom</li>
+  <li>left</li>
+  <li>right</li>
+</ol>
+<pre class="box">
+  <code>
+  background: white url('good-morning.jpg');  
+  background-repeat: no-repeat;  
+  background-attachment: fixed;  
+  background-position: center;
+  </code>
+</pre>
+</div>
+</div>
+</body>
+</html>

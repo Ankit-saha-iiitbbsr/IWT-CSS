@@ -1,0 +1,226 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Introduction</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="outline.html">CSS outlines</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a class="active" href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+<h1>CSS Outline</h1> 
+ <p>CSS outline is just like CSS outline property. It facilitates you to draw an extra outline around an element to get visual attention.</p>
+ <ul>
+   <li>outline-style</li>
+   <li>outline-color</li>
+   <li>outline-width</li>
+   <li>outline-offset</li>
+ </ul>
+ <h2>CSS outline-style</h2>
+ <p>The <em>outline-style</em> property specifies the style of the outline, and can have one of the following values:</p>
+ <ul>
+   <li><em>dotted</em> - Defines a dotted outline</li>
+   <li><em>dashed</em> - Defines a dashed outline</li>
+   <li><em>solid</em> - Defines a solid outline</li>
+   <li><em>double</em> - Defines a double outline</li>
+   <li><em>groove</em> - Defines a 3D grooved outline.</li>
+   <li><em>ridge</em> - Defines a 3D ridged outline.</li>
+   <li><em>inset</em> - Defines a 3D inset outline.</li>
+   <li><em>outset</em> - Defines a 3D outset outline.</li>
+   <li><em>none</em> - Defines no outline</li>
+   <li><em>hidden</em> - Defines a hidden outline</li>
+ </ul>
+ <pre class="box">
+  <code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+p.none {outline-style: none;}
+p.dotted {outline-style: dotted;}
+p.dashed {outline-style: dashed;}
+p.solid {outline-style: solid;}
+p.double {outline-style: double;}
+p.groove {outline-style: groove;}
+p.ridge {outline-style: ridge;}
+p.inset {outline-style: inset;}
+p.outset {outline-style: outset;}
+p.hidden {outline-style: hidden;}
+p.mix {outline-style: dotted dashed solid double;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p class="none"&gt;No outline.&lt;/p&gt;
+&lt;p class="dotted"&gt;A dotted outline.&lt;/p&gt;
+&lt;p class="dashed"&gt;A dashed outline.&lt;/p&gt;
+&lt;p class="solid"&gt;A solid outline.&lt;/p&gt;
+&lt;p class="double"&gt;A double outline.&lt;/p&gt;
+&lt;p class="groove"&gt;A groove outline.&lt;/p&gt;
+&lt;p class="ridge"&gt;A ridge outline.&lt;/p&gt;
+&lt;p class="inset"&gt;An inset outline.&lt;/p&gt;
+&lt;p class="outset"&gt;An outset outline.&lt;/p&gt;
+&lt;p class="hidden"&gt;A hidden outline.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;  
+  </code>
+</pre>
+<p>Output:</p>
+<p style="outline-style:none">No outline.</p>  
+<p style="outline-style:dotted">A dotted outline.</p>  
+<p style="outline-style:dashed">A dashed outline.</p>  
+<p style="outline-style:solid">A solid outline.</p>  
+<p style="outline-style:double">A double outline.</p>  
+<p style="outline-style:groove">A groove outline.</p>  
+<p style="outline-style:ridge">A ridge outline.</p>  
+<p style="outline-style:inset">An inset outline.</p>  
+<p style="outline-style:outset">An outset outline.</p>  
+<p style="outline-style:hidden">A hidden outline.</p> 
+<h2>CSS outline-color</h2>
+<p>The <em>outline-color</em> property is used to set the color of the outline.</p>
+<pre class="box">
+  <code>
+  p.one {
+    outline-style: solid;
+    outline-color: red;
+  }
+  p.two {
+    outline-style: dotted;
+    outline-color: blue;
+  }
+  </code>
+</pre>
+<p>Try it out!</p>
+<h2>CSS outline-width</h2>
+<p>It is similar to margin and padding. It can be either an absolute value or a relative value or one of the predefined outline width values i.e. thin, medium or thick. It is preferred to use either an absolute value or a relative value because different browsers interpret differently while using predefined outline width values like thin, medium or thick.</p>
+<pre class="box">
+  <code>
+  p.one {
+    outline-style: solid;
+    outline-width: 5px;
+  }
+  p.two {
+    outline-style: solid;
+    outline-width: medium;
+  }
+  p.three {
+    outline-style: dotted;
+    outline-width: 2px;
+  }
+  p.four {
+    outline-style: dotted;
+    outline-width: thick;
+  }
+  </code>
+</pre>
+<p>Try it. The output will look like this:</p>
+<p style="outline-style: solid; outline-width: 5px;">5px outline-width</p>  
+<p style="outline-style:solid;outline-width: medium;">medium outline-width</p>  
+<p style="outline-style: dotted;outline-width: 2px;">2px outline-width</p>  
+<p style="outline-style: dotted;outline-width: thick;">thick outline-width</p>
+<p>The outline-width property can have from one to four values (for the top outline, right outline, bottom outline, and the left outline)</p>
+<h2>Shorthand Property</h2>
+<p>The <em>outline</em> property is a shorthand property for the following individual outline properties:<em>outline-width, outline-style</em> (required) <em>outline-color</em>.</p>
+<pre class="box">
+  <code>
+  p {
+    outline: 5px solid red;
+  }
+  </code>
+</pre>
+<h2>CSS outline-offset</h2>
+<p>The outline offset is used to create a distance between outline and border.</p>
+<pre class="box">
+  <code>
+  p {
+    margin: 30px;
+    border: 2px solid yellow;
+    outline: 1px solid red;
+    outline-offset: 15px;
+  }
+  </code>
+</pre>
+<p style="margin: 30px;border: 1px solid yellow;outline-style:1px solid red;outline-offset: 25px;">outline of 15px outside the border edge.</p>
+</div>
+</div>
+</body>
+</html>

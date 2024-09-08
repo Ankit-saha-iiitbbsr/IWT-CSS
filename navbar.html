@@ -1,0 +1,216 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Navigation Bar</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+li b {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li b:hover {
+  background-color: #111;
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a class="active" href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+ <h1>CSS Navigation Bar</h1> 
+ <ul>
+   <li>Vertical Navbar</li>
+   <li>Horizontal Navbar</li>
+ </ul>
+ <h4>Nav bar -> List of Links</h4>
+ <h3 style="color: red">Vertical Navbar:</h3>
+ <pre class="box">
+  <code>
+      ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li a {
+  display: block;
+  width: 60px;
+  background-color: #dddddd;
+}
+  </code>
+</pre>
+<ul style="list-style-type: none; margin: 0; padding: 0;">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+<pre class="box">
+  <code>
+      ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;
+  </code>
+</pre>
+<h3 style="color: red">Horizontal Navbar:</h3>
+<pre class="box">
+  <code>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+  </code>
+</pre>
+<ul style="list-style-type: none;margin: 0;padding: 0;">
+  <li style="display: inline;"><a href="#home">Home</a></li>
+  <li style="display: inline;"><a href="#news">News</a></li>
+  <li style="display: inline;"><a href="#contact">Contact</a></li>
+  <li style="display: inline;"><a href="#about">About</a></li>
+</ul>
+
+
+
+<pre class="box">
+  <code>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+  </code>
+</pre>
+<p style="color: blue">Output:</p>
+<code>
+  <ul style="list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;">
+  <li style="float: left;"><b class="active" href="#home">Home</a></li>
+  <li style="float: left;"><b href="#news">News</a></li>
+  <li style="float: left;"><b href="#contact">Contact</a></li>
+  <li style="float: left;"><b href="#about">About</a></li>
+</ul>
+
+</code>
+</div>
+</div>
+</body>
+</html>

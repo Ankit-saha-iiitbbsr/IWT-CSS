@@ -1,0 +1,353 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Psuedo-Class</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 700px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a class="active" href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+
+<h1>CSS Psuedo Classes</h1>
+ <p>
+A pseudo-class can be defined as a keyword which is combined to a selector that defines the special state of the selected elements. It is added to the selector for adding an effect to the existing elements based on their states. For example, The ":hover" is used for adding special effects to an element when the user moves the cursor over the element.
+
+The names of the pseudo-class are not case-sensitive.</p>
+<h3>Syntax</h3>
+<p>A pseudo-class starts with a colon <strong>(:).</strong> Let's see its syntax.</p>
+<pre class="box">
+selector: pseudo-class {
+  property: value;
+}
+</pre>
+
+ <pre class="box">
+  <code>
+  &lt;p style="color:blue"&gt;Hello CSS&lt;/p&gt;  
+  </code>
+</pre>
+<p>Let's discuss the above pseudo-classes, along with an example.</p>
+<h2 >:hover pseudo-class</h2>
+<p>This pseudo-class adds a special style to an element when the user moves the cursor over it. If you want to make it effective, it must be applied after the <strong>":link"</strong> and <strong>":visited"</strong> pseudo-classes.</p>
+<h3 >Example</h3>
+<pre class="box">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         body{
+   text-align:center;
+   }
+   h1:hover{
+   color:red;
+   }
+   h2:hover{
+   color:blue;
+   }
+      &lt;/style&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;h1&gt;Hello world &lt;/h1&gt;
+    &lt;h2&gt;This is an example of :hover pseudo class&lt;/h2&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h2 >:active pseudo-class</h2>
+<p>It applies when the elements are clicked or activated. It selects the activated element.</p>
+<p>We can understand it with the example given below.</p>
+<h3 >Example</h3>
+<pre class="box">
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;head&gt; 
+    &lt;style&gt; 
+  body{
+  text-align:center;
+  }
+    a:active{ 
+        color: yellow; 
+    } 
+    h1, h2, h3{ 
+        color:red; ; 
+    } 
+    &lt;/style&gt; 
+&lt;/head&gt; 
+  
+&lt;body&gt; 
+    &lt;h1&gt;Hello World&lt;/h1&gt; 
+    &lt;h2&gt;The :active pseudo-class&lt;/h2&gt; 
+  &lt;h3&gt;Click the following link to see the effect&lt;/h3&gt;
+    &lt;a href="#"&gt;Click the link&lt;/a&gt;
+&lt;/body&gt; 
+&lt;/html&gt;
+</pre>
+
+<h2 >:visited pseudo-class</h2>
+<p>It selects the visited links and adds special styles to them. Its possible values can be any color name in a valid format.</p>
+<h3 >Example</h3>
+<pre class="box">
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;head&gt; 
+    &lt;style&gt; 
+  body{
+  text-align:center;
+  }
+    a:visited{ 
+        color: red; 
+    } 
+
+    &lt;/style&gt; 
+&lt;/head&gt; 
+  
+&lt;body&gt; 
+    &lt;h1&gt;Hello World&lt;/h1&gt; 
+    &lt;h2&gt;The :visited pseudo-class&lt;/h2&gt; 
+  &lt;h3&gt;Click the following link to see the effect&lt;/h3&gt;
+    &lt;a href="#"&gt;Click the link&lt;/a&gt;
+&lt;/body&gt; 
+&lt;/html&gt;
+</pre>
+
+<h2 >:lang pseudo-class</h2>
+<p>It is helpful in documents that require multiple languages. It allows us to define special rules for different languages.</p>
+<h3 >Example</h3>
+<p>In this example, we specify <strong>p:lang(fr)</strong> which selects the elements having attribute <strong>lang="fr"</strong>.</p>
+<pre class="box">
+&lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+  body{
+  text-align:center;
+  }
+       p:lang(fr)
+    {
+        font-family:Verdana;
+        color:blue;
+    
+    }
+   &lt;/style&gt;
+ &lt;/head&gt;
+&lt;body&gt;
+  
+  &lt;p&gt;Without :lang pseudo class&lt;/p&gt;
+  &lt;p lang="fr"&gt;With :lang pseudo class with the value fr&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+
+<h2 >:focus pseudo-class</h2>
+<p>It selects the elements that are currently focused on by the user. It is generally used in input elements of the forms and triggers when the user clicks on it.</p>
+<h3 >Example</h3>
+<pre class="box">
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+  &lt;style&gt;
+  form{
+  text-align:center;
+  }
+  input:focus{
+         border:5px solid lightblue;
+         box-shadow:10px 10px 10px black;
+         color: blue;
+         width:300px;
+     }
+   &lt;/style&gt;
+ &lt;body&gt;
+  &lt;form&gt;
+    &lt;h1&gt;Name: &lt;input type="text" value="Enter your name"&gt;&lt;/h1&gt;
+   &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h2>:first-child pseudo-class</h2>
+<p>It matches a particular element, which is the first child of another element and adds a special effect to the corresponding element.</p>
+<p>Note: We have to declare a &lt;!DOCTYPE&gt; at the top of the document to make ":first-child" pseudo-class to work in IE8 and its earlier versions.</p>
+<p>The following illustration explains it more clearly.</p>
+<h3 >Example</h3>
+<pre class="box">
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+          h1:first-child {
+            text-indent: 200px;
+  color:blue;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+   
+      &lt;div&gt;
+         &lt;h1&gt;It is the first heading in div. It will be indented, and its color will be blue.&lt;/h1&gt;
+         &lt;h1&gt;It is the Second heading in div, which will not be affected.&lt;/h1&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h2 >The simple tooltip hover</h2>
+<p>A tooltip specifies extra information about something when the user moves the cursor over the element. Let's create a tooltip by using the <strong>":hover"</strong> pseudo-class.</p>
+<h3 >Example</h3>
+<pre class="box">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+body{
+text-align:center;
+}
+h2{
+  display: none;
+  background-color: red;
+  color:white;
+  padding: 20px;
+}
+div{
+font-size:40px;
+}
+div:hover h2 {
+  display: block;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Move your mouse to the below text to see the effect&lt;/h1&gt; 
+&lt;div&gt;Hello World
+  &lt;h2&gt;Welcome CSS&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h2 >CSS classes and pseudo-classes</h2>
+<p>The classes in CSS can be combined with <strong>pseudo-classes.</strong> We can write it as-</p>
+<h3 >Syntax</h3>
+<pre class="box">
+selector.class: pseudo-class {
+  property: value;
+}
+</pre>
+<p>We can understand it with the following example.</p>
+<h3 >Example</h3>
+<pre class="box">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+body{
+text-align:center;
+}
+div.hello:hover {
+  color: red;
+  font-size:40px;
+} 
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;CSS Classes and pseudo-classes&lt;/h1&gt;
+&lt;h2&gt;Move your cursor to the below text&lt;/h2&gt;
+&lt;div class="hello"&gt;Hello World&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<pre class="box">
+  <code>
+   &lt;style&gt;
+   p{color:blue} 
+   &lt;/style&gt;
+  </code>
+</pre>
+<br>
+</div>
+</div>
+</body>
+</html>
+

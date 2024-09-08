@@ -1,0 +1,214 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Icons</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 700px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a class="active" href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+<h1>CSS icons</h1>
+<p>Icons can be defined as the images or symbols used in any computer interface refer to an element. It is a graphical representation of a file or program that helps the user to identify about the type of file quickly.</p>
+<p>Using the icon library is the easiest way to add icons to our HTML page. It is possible to format the library icons by using CSS. We can customize the icons according to their color, shadow, size, etc.</p>
+<p>There are given some of the icon libraries such as <strong>Bootstrap icons, Font Awesome icons,</strong> and <strong>Google icons</strong> that can be used in CSS easily. There is no need to install or download the libraries mentioned above.</p>
+<p>Let's discuss the above-mentioned libraries of icons.</p>
+<h2>Font Awesome icons</h2>
+<p>To use this library in our HTML page, we need to add the following link within the <strong>&lt;head&gt;&lt;/head&gt;</strong> section.</p>
+<pre class="box">
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+awesome/4.7.0/css/font-awesome.min.css"&gt;
+</pre>
+<p>Let's understand it with an illustration.</p>
+<h3 >Example</h3>
+<pre class="box">
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+      
+&lt;head&gt; 
+&lt;title&gt;CSS Icons&lt;/title&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font
+-awesome/4.7.0/css/font-awesome.min.css"&gt; 
+&lt;style&gt;
+body{
+text-align:center;
+background-color:lightblue;
+}
+.fa{
+color:red;
+font-size:50px;
+margin:10px;
+}
+&lt;/style&gt;
+&lt;/head&gt; 
+&lt;body style="text-align:center"&gt; 
+&lt;h1&gt;Font Awesome Library&lt;/h1&gt;
+      &lt;i class="fa fa-cloud"&gt;&lt;/i&gt; 
+      &lt;i class="fa fa-file"&gt;&lt;/i&gt; 
+      &lt;i class="fa fa-heart"&gt;&lt;/i&gt; 
+      &lt;i class="fa fa-bars"&gt;&lt;/i&gt; 
+      &lt;i class="fa fa-car"&lt;/i&gt; 
+&lt;/body&gt; 
+&lt;/html&gt;  
+</pre>
+<h2>Bootstrap icons</h2>
+<p>As similar to the font awesome library, we can add the bootstrap icons in our HTML page using the link given below in the <strong>&lt;head&gt;&lt;/head&gt;</strong> section.</p>
+<pre class="box">
+&lt;link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+</pre>
+<h3>Example</h3>
+<pre class="box">
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+      
+&lt;head&gt; 
+&lt;title&gt;CSS Icons&lt;/title&gt;
+&lt;link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+&lt;style&gt;
+body{
+text-align:center;
+background-color:lightblue;
+}
+.glyphicon{
+color:red;
+font-size:50px;
+margin:10px;
+}
+&lt;/style&gt;
+&lt;/head&gt; 
+&lt;body style="text-align:center"&gt; 
+&lt;h1&gt;Bootstrap icons&lt;/h1&gt;
+      &lt;i class="glyphicon glyphicon-cloud"&gt;&lt;/i&gt; 
+      &lt;i class="glyphicon glyphicon-file"&gt;&lt;/i&gt; 
+      &lt;i class="glyphicon glyphicon-heart"&gt;&lt;/i&gt; 
+      &lt;i class="glyphicon glyphicon-user"&gt;&lt;/i&gt; 
+      &lt;i class="glyphicon glyphicon-thumbs-up"&gt;&lt;/i&gt; 
+      &lt;i class="glyphicon glyphicon-remove"&gt;&lt;/i&gt;
+      &lt;i class="glyphicon glyphicon-envelope"&gt;&lt;/i&gt;      
+&lt;/body&gt; 
+&lt;/html&gt;  
+</pre>
+<h2>Google icons</h2>
+<p>As similar to the above libraries, we can add it in our HTML page simply by adding the link given below in the <strong>&lt;head&gt;&lt;/head&gt;</strong> section.</p>
+<h3>Example</h3>
+<pre class="box">
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+</pre>
+<h3>Example</h3>
+<pre class="box">
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+      
+&lt;head&gt; 
+&lt;title&gt;CSS Icons&lt;/title&gt;
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+&lt;style&gt;
+body{
+text-align:center;
+background-color:lightblue;
+}
+.material-icons{
+color:red;
+font-size:50px;
+margin:10px;
+}
+&lt;/style&gt;
+&lt;/head&gt; 
+&lt;body style="text-align:center"&gt; 
+&lt;h1&gt;Google icons&lt;/h1&gt;
+      &lt;i class="material-icons"&gt;cloud&lt;/i&gt; 
+      &lt;i class="material-icons"&gt;attachment&lt;/i&gt; 
+      &lt;i class="material-icons"&gt;computer&lt;/i&gt; 
+      &lt;i class="material-icons"&gt;favorite&lt;/i&gt; 
+      &lt;i class="material-icons"&gt;traffic&lt;/i&gt;   
+&lt;/body&gt; 
+&lt;/html&gt;  
+</pre>
+<br>
+</div>
+</div>
+</body>
+</html>

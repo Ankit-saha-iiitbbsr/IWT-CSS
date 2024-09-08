@@ -1,0 +1,279 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Combinators</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a class="active" href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+
+<h1>CSS Combinators</h1>
+<p>CSS Combinators clarifies the relationship between two selectors, whereas the selectors in CSS are used to select the content for styling.</p>
+<p>There can be more than one simple selector in a CSS selector, and between these selectors, we can include a combinator. Combinators combine the selectors to provide them a useful relationship and the position of content in the document.</p>
+<p>There are four types of combinators in CSS that are listed as follows:</p>
+<ul class="points">
+<li>General sibling selector (~)</li>
+<li>Adjacent sibling selector (+)</li>
+<li>Child selector (&gt;)</li>
+<li>Descendant selector (space)</li>
+</ul>
+<h2>General Sibling Selector (~)</h2>
+<p>It uses the <strong>tlide (~)</strong> sign as the separator between the elements. It selects the elements that follow the elements of first selector, and both of them are the children of the same parent. It can be used for selecting the group of elements that share the common parent element.</p>
+<p>It is useful when we have to select the siblings of an element even if they are not adjacent directly.</p>
+<h3>Syntax</h3>
+<pre class="box">
+element ~ element {
+   /*style properties*/
+}
+</pre>
+<p>Suppose we have to select all <strong>&lt;p&gt;</strong> elements that are the siblings of <strong>&lt;div&gt;</strong> element, then we can write it as:</p>
+<pre class="box">
+div ~ p {
+   /*style properties*/
+}
+</pre>
+<p>The figure given below helps us to understand the General sibling selector (~).</p>
+<img src="css-combinators.png" alt="CSS Combinators"/>
+<p>In this figure, the blocks with the green color are the selected blocks affected after using the general sibling selector.</p>
+<h3>Example</h3>
+<p>In this example we are selecting the <strong>&lt;p&gt;</strong> elements that come after the<strong>&lt;h1&gt;</strong>. There is a <strong>&lt;div&gt;</strong> element which will not get selected and the paragraph element inside the div will also not get selected. But those <strong>&lt;p&gt;</strong> elements that come after the <strong>&lt;div&gt;</strong> will be affected.</p>
+<p>This example will illustrate the use of a General sibling selector (~).</p>
+<pre class="box">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;General Sibling Selector&lt;/title&gt;
+&lt;style&gt;
+body{
+text-align: center;
+}
+h1 ~ p{
+color: blue;
+font-size: 25px;
+font-weight: bold;
+text-align: center;
+}
+div {
+font-size: 32px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;General sibling selector (~) property&lt;/h1&gt;
+&lt;p&gt;It is the first paragraph element which will get effected.&lt;/p&gt;
+&lt;div&gt; It is the div element
+&lt;p&gt; It is the paragraph under the div element &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;It is the paragraph element after the div&lt;/p&gt;
+&lt;p&gt;It is the paragraph element which will also get affected&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p><strong>Output</strong></p>
+<img src="css-combinators2.png" alt="CSS Combinators"/>
+<h2>Adjacent Sibling Selector (+)</h2>
+<p>It uses the <strong>plus (+)</strong> sign as the separator between the elements. It matches the second element only when the element immediately follows the first element, and both of them are the children of the same parent. This sibling selector selects the adjacent element, or we can say that the element which is next to the specified tag.</p>
+<p>It only selects the element which is just next to the specified first element.</p>
+<h3>Syntax</h3>
+<pre class="box">
+element + element {
+   /*style properties*/
+}
+</pre>
+<p>If we have to select the paragraph that comes immediately after another paragraph, then by using the adjacent selector, it will be written as follows:</p>
+<pre class="box">
+p + p {
+   /*style properties*/
+}
+</pre>
+<p>The figure given below helps us to understand the Adjacent sibling selector (+).</p>
+<img src="css-combinators3.png" alt="CSS Combinators"/>
+<p>In this figure, the blocks with the green color are the selected blocks affected after using the adjacent sibling selector. There is the selection of those paragraph elements that immediately comes after another paragraph element.</p>
+<h3>Example</h3>
+<p>In this example we are selecting the <strong>&lt;p&gt;</strong> element that comes immediately after the <strong>&lt;p&gt;</strong> element. There is an <strong>&lt;div&gt;</strong> element that will not be selected, and the paragraph element after the div will also not be selected. But the <strong>&lt;p&gt;</strong> element that comes just next to the third paragraph will be affected.</p>
+<p>This example will illustrate the use of Adjacent sibling selector (+).</p>
+<pre class="box">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; Adjacent Sibling Selector &lt;/title&gt;
+&lt;style&gt;
+body{
+text-align: center;
+}
+p + p{
+color: Blue;
+font-size:25px;
+font-weight: bold;
+text-align: center;
+}
+p {
+font-size: 32px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt; Adjacent sibling selector (+) property&lt;/h1&gt;
+&lt;p&gt; It is the first paragraph &lt;/p&gt;
+&lt;p&gt; It is the second paragraph which is immediately next to the first 
+paragraph, and it get selected. &lt;/p&gt;
+&lt;div&gt; This is the div element &lt;/div&gt;
+&lt;p&gt; This is the third paragraph which does not get affected &lt;/p&gt;
+&lt;p&gt; This paragraph is also selected because it immediately next to third 
+paragraph &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p><strong>Output</strong></p>
+<img src="css-combinators4.png" alt="CSS Combinators"/>
+<h2>Child Selector (>)</h2>
+<p>It uses the greater than <strong>(&gt;)</strong> sign as the separator between the elements. It selects the direct descendant of the parent. This combinator only matches the elements that are the immediate child in the document tree. It is stricter as compared to the descendant selector because it selects the second selector only when the first selector is its parent.</p>
+<p>The parent element must always be placed at the left of the <strong>"&gt;"</strong>. If we remove the greater than <strong>(&gt;)</strong> symbol that designates this as a child combinator, then it will become the descendant selector.</p>
+<h3 >Syntax</h3>
+<pre class="box">
+element > element {
+   /*style properties*/
+}
+</pre>
+<p>If we have to select the paragraph elements that are the children of <strong>&lt;div&gt;</strong> element then by using the child selector, it will be written as follows:</p>
+<pre class="box">
+div &gt; p {
+   /*style properties*/
+}
+</pre>
+<p>The figure given below helps us to understand the child selector (&gt;).</p>
+<img src="css-combinators5.png" alt="CSS Combinators"/>
+<p>In this figure, the blocks with the green color are the selected blocks affected after using the child selector. As we can see in the figure, there is only the selection of those paragraph elements that are the direct child of the div element.</p>
+<h3>Example</h3>
+<p>In this example we are selecting the <strong>&lt;p&gt;</strong> elements that are the child of a <strong>&lt;div&gt;</strong> element. It only selects those paragraph elements that are the direct child of the div element.</p>
+<p>This example will illustrate the use of the child sibling selector (&gt;).</p>
+<pre class="box">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; Child Selector &lt;/title&gt;
+&lt;style&gt;
+body{
+text-align: center;
+}
+
+div &gt; p{
+color: Blue;
+font-size:25px;
+font-weight:bold;
+text-align:center;
+}
+p {
+font-size: 20px;
+}
+
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt; Child selector (&gt;) property&lt;/h1&gt;
+&lt;p&gt; It is the first paragraph &lt;/p&gt;
+&lt;p&gt; It is the second paragraph &lt;/p&gt;
+&lt;div&gt;
+&lt;h1&gt;This is the div element&lt;/h1&gt;
+&lt;p&gt; This is the third paragraph which is the child of div element &lt;/p&gt;
+&lt;p&gt; This is the fourth paragraph and also get selected because it is also 
+the child of div element &lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<br>
+</div>
+</div>
+</body>
+</html>
+
+
+
+

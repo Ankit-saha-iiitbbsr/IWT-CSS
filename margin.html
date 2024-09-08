@@ -1,0 +1,167 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Introduction</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a class="active" href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+ <h1>CSS Margin</h1> 
+ <p>CSS Margin property is used to define the space around elements. It is completely transparent and doesn't have any background color. It clears an area around the element.</p>
+ <p><b>Properties:</b></p>
+ <ul>
+  <li>margin</li>
+   <li>margin-top</li>
+   <li>margin-right</li>
+   <li>margin-bottom</li>
+   <li>margin-left</li>
+ </ul>
+<p><b>Values:</b></p>
+ <ul>
+  <li>auto- This is used to let the browser calculate a margin.</li>
+   <li>length- It is used to specify a margin pt, px, cm, etc. its default value is 0px.</li>
+   <li>%- It is used to define a margin in percent of the width of containing element.</li>
+   <li>inherit- It is used to inherit margin from parent element.</li>
+ </ul>
+ <pre class="box">
+  <code>
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;style&gt;
+  p {
+      background-color: blue;
+  }
+  p.ex {
+      background-color: blue;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-right: 100px;
+      margin-left: 100px;
+  }
+  &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;p&gt;This paragraph is not displayed with specified margin. &lt;/p&gt;
+  &lt;p class="ex"&gt;This paragraph is displayed with specified margin.&lt;/p&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  </code>
+</pre>
+<p><strong>Output:</strong></p>
+<p style="background-color: blue;">This paragraph is not displayed with specified margin. </p>  
+<p style="background-color: blue;margin-top: 50px;margin-bottom: 50px;margin-right: 100px;margin-left: 100px;">This paragraph is displayed with specified margin.</p>  
+<h2>Shorthand Property</h2>
+<pre class="box">
+  <code>
+  margin: 50px 100px 150px 200px;
+          top  right bottom left
+  </code>
+</pre>
+<pre class="box">
+  <code>
+  margin: 50px 100px 150px;
+          top  left  bottom
+               right
+  </code>
+</pre>
+<pre class="box">
+  <code>
+  margin: 50px 100px;
+          top  left
+        bottom right
+  </code>
+</pre>
+<pre class="box">
+  <code>
+  margin: 50px;
+        all four
+  </code>
+</pre>
+<p>Try these various codes.</p>
+</div>
+</div>
+</body>
+</html>

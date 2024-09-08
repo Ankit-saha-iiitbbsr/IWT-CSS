@@ -1,0 +1,289 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Introduction</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a class="active" href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+ <h1>CSS Layout- The display Property</h2> 
+ <p>CSS display is the most important property of CSS which is used to control the layout of the element. It specifies how the element is displayed.</p>
+ <h2>CSS display values</h2>
+ <ol>
+   <li>display: inline;</li>
+   <li>display: block;</li>
+   <li>display: run-in;</li>
+   <li>display: none;</li>
+ </ol>
+ <h3>CSS display inline</h3>
+ <p>The inline element takes the required width only. It doesn't force the line break so the flow of text doesn't break in inline example. </p>
+ <p>Examples of inline elements:</p>
+ <ul>
+   <li><code>&lt;span&gt;</code></li>
+   <li><code>&lt;a&gt;</code></li>
+   <li><code>&lt;b&gt;</code></li>
+ </ul>
+ <pre class="box">
+  <code>
+  p {  
+    display: inline-block;   
+  }    
+  </code>
+</pre>
+<p>Output:</p>
+<p style="display:inline;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>  
+<h3>CSS display block</h3>
+<p>A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).</p>
+<ul>
+   <li><code>&lt;div&gt;</code></li>
+   <li><code>&lt;p&gt;</code></li>
+   <li><code>&lt;h1&gt;-&lt;h6&gt;</code></li>
+   <li><code>&lt;form&gt;</code></li>
+ </ul>
+<pre class="box">
+  <code>
+  p {  
+    display: block;   
+  }
+  </code>
+</pre>
+<h2>CSS display none</h2>
+<p>The "none" value totally removes the element from the page. It will not take any space.</p>
+<pre class="box">
+  <code>
+  h1.hidden {  
+    display: none;  
+  }
+  </code>
+</pre>
+<h1>CSS Layout - width</h1>
+<p>The CSS width property is used to set the width of the content area of an element.</p>
+<pre class="box">
+  <code>
+  div.ex1 {
+    width: 500px;
+    margin: auto;
+    border: 3px solid #73AD21;
+  }
+  </code>
+</pre>
+<p>The max-width property in CSS is used to set the maximum width of the element's content box. It means that the width of the content box can be smaller than the max-width value, but cannot be greater. It sets the upper bound on the element's width.</p>
+<pre class="box">
+  <code>
+  div.ex2 {
+    max-width: 500px;
+    margin: auto;
+    border: 3px solid #73AD21;
+  }
+  </code>
+</pre>
+<p>Resize the browser window to less than 500px wide, to see the difference between the two divs!</p>
+<h1>CSS Layout - The position Property</h1>
+<p>The CSS position property is used to set position for an element. it is also used to place an element behind another and also useful for scripted animation effect.</p>
+<p>There are five different position values: </p>
+<ul>
+   <li>static</li>
+   <li>relative</li>
+   <li>fixed</li>
+   <li>absolute</li>
+   <li>sticky</li>
+</ul>
+<p>You can position an element using the top, bottom, left and right properties. These properties can be used only after position property is set first</p>
+<h2>Static Positioning</h2>
+<p>An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page.</p>
+<p>This is a by default position for HTML elements.</p>
+<h2>Fixed Positioning</h2>
+<p>The fixed positioning property helps to put the text fixed on the browser. This fixed test is positioned relative to the browser window, and doesn't move even you scroll the window. </p>
+<pre class="box">
+  <code>
+  p.pos_fixed {  
+    position: fixed;  
+    top: 50px;  
+    right: 5px;  
+    color: blue;  
+  } 
+  </code>
+</pre>
+<h2>Relative Positioning</h2>
+<p>The relative positioning property is used to set the element relative to its normal position. </p>
+<pre class="box">
+  <code>
+  h2.pos_left {  
+      position: relative;  
+      left: -30px;  
+  }  
+  h2.pos_right {  
+      position: relative;  
+      left: 30px;  
+  } 
+  </code>
+</pre>
+<h2>Absolute Positioning</h2>
+<p>An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). </p>
+<pre class="box">
+  <code>
+  div.relative {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73AD21;
+  }
+
+  div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+  } 
+  </code>
+</pre>
+<p>Try all these position elemests and note the differences.</p>
+<h1>CSS Layout - Overflow</h1>
+<p>The CSS overflow property specifies how to handle the content when it overflows its block level container.</p>
+<ul>
+   <li><em>visible</em> - It specifies that overflow is not clipped. It renders outside the element's box. This is a default value.</li>
+   <li><em>hidden</em> - It specifies that the overflow is clipped, and rest of the content will be invisible.</li>
+   <li><em>scroll</em> - It specifies that the overflow is clipped, and a scroll bar is used to see the rest of the content.</li>
+   <li><em>auto</em> - It specifies that if overflow is clipped, a scroll bar is needed to see the rest of the content.</li>
+</ul>
+<pre class="box">
+  <code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;style&gt;
+    div.scroll {
+        background-color: #eee;
+        width: 100px;
+        height: 100px;
+        overflow: scroll;
+    }
+
+    div.hidden {
+        background-color: #00FF00;
+        width: 100px;
+        height: 170px;
+        overflow: hidden;
+    }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;p&gt;The overflow property specifies what to do if the content of an 
+    element exceeds the size of the element's box.&lt;/p&gt;
+    &lt;p&gt;overflow:scroll&lt;/p&gt;
+    &lt;div class="scroll"&gt;You can use the overflow property when you want 
+    to have better control of the layout.
+     The default value is visible.&lt;/div&gt;
+    &lt;p&gt;overflow:hidden&lt;/p&gt;
+    &lt;div class="hidden"&gt;You can use the overflow property when you want 
+    to have better control of the layout. 
+    The default value is visible.&lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt; 
+  </code>
+</pre>
+<p>Output:</p>
+<p>The overflow property specifies what to do if the content of an element exceeds the size of the element's box.</p>  
+<p>overflow:scroll</p>  
+<div style="background-color: #eee; width: 100px; height: 100px;overflow: scroll;">You can use the overflow property when you want to have better control of the layout. The default value is visible.</div>  
+<p>overflow:hidden</p>  
+<div style="background-color: #00FF00; width: 100px;height: 170px;overflow: hidden;">You can use the overflow property when you want to have better control of the layout.   The default value is visible.</div> 
+<h1>CSS Layout - Float</h1>
+<p>The CSS float property is a positioning property. It is used to push an element to the left or right, allowing other element to wrap around it. It is generally used with images and layouts.</p>
+<img src="css-float.png">
+<p>Float Values:</p>
+<ul>
+  <li>float: right;</li>
+  <li>float: left;</li>
+  <li>float: none;</li>
+  <li>float: inherit;</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

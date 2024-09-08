@@ -1,0 +1,228 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Introduction</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.box{
+  width: 600px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: gray;
+}
+.nb a{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.nb a.active{
+  background-color:black;
+  color: white;
+}
+.nb a:hover:not(.active){
+  background-color: black;
+  color: white;
+}
+.column{
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 20%;
+}
+.column.middle {
+  width: 80%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column side">
+<ul class="nav">
+  <li class="nb"><a href="index.html">Home</a></li>
+  <li class="nb"><a href="css.html">Learn CSS</a></li>
+  <li class="nb"><a href="selectors.html">CSS Selectors</a></li>
+  <li class="nb"><a href="add.html">How to add CSS</a></li>
+  <li class="nb"><a href="color.html">CSS Colors</a></li>
+  <li class="nb"><a href="background.html">CSS Backgrounds</a></li>
+  <li class="nb"><a href="text.html">CSS Texts</a></li>
+  <li class="nb"><a href="font.html">CSS Fonts</a></li>
+  <li class="nb"><a class="active" href="border.html">CSS Borders</a></li>
+  <li class="nb"><a href="padding.html">CSS Padding</a></li>
+  <li class="nb"><a href="margin.html">CSS Margins</a></li>
+  <li class="nb"><a href="outline.html">CSS Outline</a></li>
+  <li class="nb"><a href="icons.html">CSS Icons</a></li>
+  <li class="nb"><a href="links.html">CSS Links</a></li>
+  <li class="nb"><a href="list.html">CSS Lists</a></li>
+  <li class="nb"><a href="table.html">CSS Tables</a></li>
+  <li class="nb"><a href="image.html">CSS Images</a></li>
+  <li class="nb"><a href="layout.html">CSS Layout</a></li>
+  <li class="nb"><a href="combinators.html">CSS Combinators</a></li>
+  <li class="nb"><a href="pclass.html">CSS Pseudo-class</a></li>
+  <li class="nb"><a href="pelem.html">CSS Pseudo-element</a></li>
+  <li class="nb"><a href="navbar.html">CSS Navigation Bar</a></li>
+  <li class="nb"><a href="forms.html">CSS Forms</a></li>
+</ul>
+</div>
+<div class="column middle">
+<img style="float: right; width:120px;height:120px" src="IIIT-BH_Official_Logo.png">
+ <h1>CSS Border</h1> 
+ <p>The CSS border properties are use to specify the style, color and size of the border of an element. The CSS border properties are given below.</p>
+ <ul>
+   <li>border-style</li>
+   <li>border-color</li>
+   <li>border-width</li>
+   <li>border-radius</li>
+ </ul>
+ <h2>CSS border-style</h2>
+ <p>The <em>border-style</em> property specifies what kind of border to display.</p>
+ <ul>
+   <li><em>dotted</em> - Defines a dotted border</li>
+   <li><em>dashed</em> - Defines a dashed border</li>
+   <li><em>solid</em> - Defines a solid border</li>
+   <li><em>double</em> - Defines a double border</li>
+   <li><em>groove</em> - Defines a 3D grooved border. The effect depends on the border-color value</li>
+   <li><em>ridge</em> - Defines a 3D ridged border. The effect depends on the border-color value</li>
+   <li><em>inset</em> - Defines a 3D inset border. The effect depends on the border-color value</li>
+   <li><em>outset</em> - Defines a 3D outset border. The effect depends on the border-color value</li>
+   <li><em>none</em> - Defines no border</li>
+   <li><em>hidden</em> - Defines a hidden border</li>
+ </ul>
+ <p>The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border).
+</p>
+ <pre class="box">
+  <code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+p.none {border-style: none;}
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p class="none"&gt;No border.&lt;/p&gt;
+&lt;p class="dotted"&gt;A dotted border.&lt;/p&gt;
+&lt;p class="dashed"&gt;A dashed border.&lt;/p&gt;
+&lt;p class="solid"&gt;A solid border.&lt;/p&gt;
+&lt;p class="double"&gt;A double border.&lt;/p&gt;
+&lt;p class="groove"&gt;A groove border.&lt;/p&gt;
+&lt;p class="ridge"&gt;A ridge border.&lt;/p&gt;
+&lt;p class="inset"&gt;An inset border.&lt;/p&gt;
+&lt;p class="outset"&gt;An outset border.&lt;/p&gt;
+&lt;p class="hidden"&gt;A hidden border.&lt;/p&gt;
+&lt;p class="mix"&gt;A mixed border.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;  
+  </code>
+</pre>
+<p>Output:</p>
+<p style="border-style:none">No border.</p>  
+<p style="border-style:dotted">A dotted border.</p>  
+<p style="border-style:dashed">A dashed border.</p>  
+<p style="border-style:solid">A solid border.</p>  
+<p style="border-style:double">A double border.</p>  
+<p style="border-style:groove">A groove border.</p>  
+<p style="border-style:ridge">A ridge border.</p>  
+<p style="border-style:inset">An inset border.</p>  
+<p style="border-style:outset">An outset border.</p>  
+<p style="border-style:hidden">A hidden border.</p> 
+<p style="border-style: dotted dashed solid double;">A mixed border.</p> 
+<h2>CSS border-color</h2>
+<p>The <em>border-color</em> property is used to set the color of the four borders.</p>
+<pre class="box">
+  <code>
+  p.one {
+    border-style: solid;
+    border-color: red;
+  }
+  p.two {
+    border-style: dotted;
+    border-color: blue;
+  }
+  </code>
+</pre>
+<p>Try it out!</p>
+<h2>CSS border-width</h2>
+<p>The border-width property is used to set the border's width. It is set in pixels. You can also use the one of the three pre-defined values, thin, medium or thick to set the width of the border.</p>
+<pre class="box">
+  <code>
+  p.one {
+    border-style: solid;
+    border-width: 5px;
+  }
+  p.two {
+    border-style: solid;
+    border-width: medium;
+  }
+  p.three {
+    border-style: dotted;
+    border-width: 2px;
+  }
+  p.four {
+    border-style: dotted;
+    border-width: thick;
+  }
+  </code>
+</pre>
+<p>Try it. The output will look like this:</p>
+<p style="border-style: solid; border-width: 5px;">5px border-width</p>  
+<p style="border-style:solid;border-width: medium;">medium border-width</p>  
+<p style="border-style: dotted;border-width: 2px;">2px border-width</p>  
+<p style="border-style: dotted;border-width: thick;">thick border-width</p>
+<p>The border-width property can have from one to four values (for the top border, right border, bottom border, and the left border)</p>
+<h2>Shorthand Property</h2>
+<p>The <em>border</em> property is a shorthand property for the following individual border properties:<em>border-width, border-style</em> (required) <em>border-color</em>.</p>
+<pre class="box">
+  <code>
+  p {
+    border: 5px solid red;
+  }
+  </code>
+</pre>
+<h2>CSS Rounded Borders</h2>
+<p>The <em>border-radius</em> property is used to add rounded borders to an element:</p>
+<pre class="box">
+  <code>
+  p {
+    border: 2px solid red;
+    border-radius: 5px;
+  }
+  </code>
+</pre>
+<p>Try and see what is the output.</p>
+</div>
+</div>
+</body>
+</html>
